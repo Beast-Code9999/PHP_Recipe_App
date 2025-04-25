@@ -23,7 +23,9 @@
         <input type="submit" value="submit">
     </form>
     <?php
+    if (!empty($_GET['page'])) {
         echo file_get_contents("pages/{$_GET['page']}.html");
+    }
     ?>
 </body>
 </html>
