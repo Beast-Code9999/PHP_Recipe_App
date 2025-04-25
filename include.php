@@ -23,9 +23,23 @@
         <input type="submit" value="submit">
     </form>
     <?php
-    if (!empty($_GET['page'])) {
-        echo file_get_contents("pages/{$_GET['page']}.html");
-    }
+        $pages = [
+            'citrus_salmon',
+            'mediterranian',
+            'sunset_risotto',
+            'tropical_tacos',
+        ];
+        if (!empty($_GET['page'])) {
+
+            $page = $_GET['page'];
+                // now check if the current parameter is within the array
+                // this is optimal for security purposes
+            if (in_array($page, $pages)) {
+                // if the parameter is within the allowed list
+                // only then we will echo content
+                echo file_get_contents("pages/{$_GET['page']}.html");
+            }
+        }
     ?>
 </body>
 </html>
