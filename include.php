@@ -12,7 +12,7 @@
         }
     ?>
 
-    <form action="include.php" method="GET">
+    <form action="include.php" method="POST">
         <select name="page" id="page">
             <option name="">Please select a recipe</option>
             <option value="citrus_salmon" <?php if (!empty($_POST['page']) && $_POST['page'] === 'citrus_salmon') echo 'selected'; ?>>Citrus Salmon</option>
